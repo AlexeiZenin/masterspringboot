@@ -30,4 +30,11 @@ public class CustomerService implements CustomerRepository {
                 """;
         return jdbcTemplate.queryForObject(findByName, String.class, name);
     }
+
+    public void addCustomer(Customer customer) {
+        String addCustomer = """
+                insert into Customers (name, address) values (?, ?);
+                """;
+        jdbcTemplate.update(addCustomer, customer.name(), customer.address());
+    }
 }

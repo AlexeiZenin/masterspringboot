@@ -13,3 +13,4 @@ target/
 .mvn/wrapper
 mvnw
 mvnw.cmd
+__pycache__/
